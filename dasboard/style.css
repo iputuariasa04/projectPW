@@ -8,9 +8,18 @@ body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-.header,
+.container {
+    height: 100vh;
+    width: 100%;
+}
+
+.header {
+    padding: 5px 4%;
+}
+
 .content {
-    padding: 5px 5%;
+    height: 100%;
+    width: 100%;
 }
 
 .header {
@@ -24,7 +33,7 @@ body {
 .header .menu {
     display: inline-block;
     float: right;
-    margin-top: 35px;
+    margin-top: 30px;
 }
 
 .header::after {
@@ -46,51 +55,160 @@ body {
     background-color: #d39858;
 }
 
-.content h3 {
-    margin-top: 20px;
-    padding-left: 50px;
+.content::after {
+    content: "";
+    display: block;
+    clear: both;
 }
 
-.container2 {
-    padding: 5px 10%;
+.subconten1 {
     text-align: center;
-    display: inline-block;
-}
-
-.card {
-    margin: 10px;
-    border-radius: 20px;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-}
-
-.card img {
     width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    background-color: #fdfcfc;
+}
+
+.subconten1 a {
+    text-decoration: none;
+    color: #fdac53;
+    transition: all 0.5s;
+}
+
+.subconten1 a:hover {
+    transform: scale(1.5);
+}
+
+.subconten1 h3 {
+    text-transform: uppercase;
+    padding: 5px 10px;
+    background-color: #fdac53;
+    border-radius: 15px;
+    color: white;
+}
+
+.subconten2 {
+    padding: 0 5%;
+}
+
+.subconten2 .judul {
+    text-align: center;
+    padding: 30px 0;
+    color: #d39858;
+}
+
+.card .imgBx img {
+    width: 230px;
     height: auto;
 }
 
-.card .buy {
-    background-color: #d39858;
-    padding: 5px;
-    display: inline-block;
-    width: 100%;
-    margin-top: -5px;
-    color: #ffffff;
-    text-decoration: none;
-    font-size: 100%;
-}
-
-.box-card {
-    border-radius: 20px;
-    /* width: 200px; */
+.card {
+    position: relative;
+    width: 230px;
+    height: 320px;
     overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
     transition: all 0.4s;
 }
 
-.box-card:hover {
+.card:hover {
     transform: scale(1.1);
-    box-shadow: 2px 3px 3px 3px rgba(0, 0, 0, 0.5);
+}
+
+.card .cardcontenttop,
+.card .cardcontent {
+    position: absolute;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    flex-direction: column;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.card .cardcontenttop {
+    top: -250px;
+    height: 230px;
+    backdrop-filter: blur(15px);
+    color: white;
+    transition: top 0.5s;
+}
+
+.card .cardcontenttop h4 {
+    text-transform: uppercase;
+    padding-bottom: 10px;
+}
+
+.card .cardcontenttop span {
+    font-size: 12px;
+}
+
+.card .cardcontent {
+    bottom: -160px;
+    height: 100px;
+    display: flex;
+    backdrop-filter: blur(15px);
+    transition: bottom 0.5s;
+}
+
+.cardcontent .contentBx {
+    text-align: center;
+    color: white;
+    text-shadow: 1px 2px 2px rgba(0, 0, 0, 0.5);
+}
+
+.cardcontent .contentBx h3 {
+    margin-bottom: -10px;
+    padding-top: 5px;
+    font-size: 17px;
+}
+
+.cardcontent .contentBx span {
+    font-size: 13px;
+}
+
+.info {
+    width: 100%;
+    height: 40px;
+    background-color: #d39858;
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+
+.info a {
+    text-decoration: none;
+    color: white;
+}
+
+.info .harga {
+    border-right: 1px solid white;
+}
+
+.card:hover .cardcontent {
+    bottom: 0;
+}
+
+.card:hover .cardcontenttop {
+    top: 0;
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+    height: 50px;
+    background-color: #dae6ff;
 }
 
 [class*="col-"] {
@@ -118,7 +236,7 @@ body {
 }
 
 .col-6 {
-    width: 45%;
+    width: 50%;
 }
 
 .col-7 {
